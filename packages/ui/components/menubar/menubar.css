@@ -1,0 +1,66 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .menubar-component {
+    @apply border-default bg-card flex h-10 items-center space-x-1 rounded border p-1;
+  }
+
+  .menubar-trigger {
+    @apply text-md-medium bg-item hover:bg-item-hover focus:bg-item-selected data-[state=open]:bg-item-selected flex h-8 cursor-default select-none items-center rounded-sm px-3 py-1 outline-none;
+  }
+
+  .menubar-subtrigger {
+    @apply text-md focus:bg-item-hover data-[state=open]:bg-item-hover flex h-8 cursor-default select-none items-center rounded-sm px-2 py-1 outline-none [&>svg]:ml-auto [&>svg]:h-4 [&>svg]:w-4;
+  }
+
+  .menubar-subcontent {
+    @apply border-default bg-elevated text z-50 min-w-[8rem] overflow-hidden rounded border p-1;
+  }
+
+  .menubar-content {
+    @apply border-default bg-elevated text z-50 min-w-[12rem] overflow-hidden rounded border p-1 shadow-md;
+  }
+
+  .menubar-item {
+    @apply text-md focus:bg-item-hover data-[disabled]:opacity-disabled relative flex h-8 cursor-default select-none items-center rounded-sm px-2 py-1 outline-none data-[disabled]:pointer-events-none;
+  }
+
+  .menubar-checkbox-item {
+    @apply text-md focus:bg-item-hover data-[disabled]:opacity-disabled relative flex h-8 cursor-default select-none items-center rounded-sm py-1 pl-8 pr-2 outline-none data-[disabled]:pointer-events-none;
+  }
+
+  .menubar-checkbox-item-span {
+    @apply absolute left-2 flex h-4 w-4 items-center justify-center;
+  }
+
+  .menubar-checkbox-item-icon {
+    @apply stroke-icon-active h-4 w-4;
+  }
+
+  .menubar-radio-item {
+    @apply text-md focus:bg-item-hover data-[disabled]:opacity-disabled relative flex h-8 cursor-default select-none items-center rounded-sm py-1 pl-8 pr-2 outline-none data-[disabled]:pointer-events-none;
+  }
+
+  .menubar-radio-item-span {
+    @apply absolute left-2 flex h-4 w-4 items-center justify-center;
+  }
+
+  .menubar-radio-item-icon {
+    @apply stroke-icon-active h-2 w-2;
+  }
+
+  .menubar-label {
+    @apply text-heading-group flex h-8 items-center px-2 py-1;
+  }
+
+  .menubar-separator {
+    @apply bg-border -mx-1 my-1 h-[1px];
+  }
+
+  .menubar-shortcut {
+    @apply text-description ml-auto text-sm tracking-widest;
+  }
+}

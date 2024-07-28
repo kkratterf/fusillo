@@ -1,0 +1,12 @@
+{
+  "name": "@fusillo/lib",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "tailwind-merge": "^1.13.2"
+  }
+}

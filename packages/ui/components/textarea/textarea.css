@@ -1,0 +1,10 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .textarea-component {
+    @apply border-default bg-card text-md ring-offset-background placeholder:text-placeholder focus-visible:border-default focus-visible:ring-brand focus-visible:ring-offset-background disabled:opacity-disabled flex min-h-20 w-full rounded border px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed;
+  }
+}

@@ -1,0 +1,16 @@
+node_modules
+.next
+public
+**/**/node_modules
+**/**/.next
+**/**/public
+
+bun.lockb
+
+*.log
+
+.gitignore
+.npmignore
+.prettierignore
+.DS_Store
+.eslintignore

@@ -1,0 +1,10 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input-component {
+    @apply border-default bg-card text-md ring-offset-background file:text-md-medium file:text placeholder:text-placeholder focus-visible:border-default focus-visible:ring-brand focus-visible:ring-offset-background disabled:opacity-disabled flex h-9 w-full rounded border px-3 py-1 file:border-0 file:bg-transparent file:py-[2px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed;
+  }
+}

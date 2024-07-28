@@ -1,0 +1,34 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button-component {
+    @apply text-md-medium ring-offset-background focus-visible:ring-brand disabled:opacity-disabled inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap rounded px-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none [&>svg]:h-4 [&>svg]:w-4;
+  }
+
+  .icon-button {
+    @apply w-9 px-0;
+  }
+
+  .button-primary {
+    @apply bg-brand text-brand-inverse hover:bg-brand-hover active:bg-brand-active;
+  }
+
+  .button-secondary {
+    @apply bg-item text border-default hover:bg-item-hover active:bg-item-selected border;
+  }
+
+  .button-text {
+    @apply text hover:bg-item-hover active:bg-item-selected;
+  }
+
+  .button-link {
+    @apply text-brand hover:text-brand-hover active:text-brand-active underline underline-offset-4;
+  }
+
+  .button-danger {
+    @apply bg-danger text-danger-inverse hover:bg-danger-hover active:bg-danger-active;
+  }
+}

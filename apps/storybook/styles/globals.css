@@ -1,0 +1,6 @@
+@import "../../../packages/config/theme/shared-globals.css";
+@import "./storybook.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

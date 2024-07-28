@@ -1,0 +1,209 @@
+---
+title: Badge
+---
+
+import { Tabs, Cards, Card } from "nextra/components";
+import {
+  BadgePreview,
+  BadgeDefault,
+  BadgeBrand,
+  BadgeDanger,
+  BadgeWarning,
+} from "@components/preview/badge.tsx";
+
+# 💠 Badge
+
+Visual indicator for states or numeric values such as tallies and scores.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <BadgePreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="badge.tsx"
+    import { Badge } from "@fusillo/ui/components/badge"
+    import { Activity } from "@fusillo/ui/components/icon"
+
+    export function BadgeDemo() {
+      return (
+        <Badge>
+            <Activity />
+            Active
+        </Badge>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+The Badge component serves as a visual indicator for numeric values and states, such as tallies, scores, or status labels. They are often used to draw attention to new or important information, like unread messages, or to categorize items using color-coded labels.
+
+Badges should be clear and legible, providing immediate understanding of the information they convey.
+
+### When to use
+
+- **Status indication**: Use Badges to indicate the status of an item, such as "active," "pending," or "completed."
+- **Notification alerts**: Employ Badges to alert users to new information or updates, such as unread messages or notifications.
+- **Quantitative counts**: Utilize Badges to display counts for items like emails, errors, or shopping cart items.
+
+Avoid using Badges for detailed information that requires more context; instead, use a tooltip or another method that allows for more explanation. Do not overuse Badges, as too many can clutter the interface and dilute their impact.
+
+## Examples
+
+### Default
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <BadgeDefault />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {7,11,14,17} /default/ filename="badge.tsx"
+    import { Badge } from "@fusillo/ui/components/badge"
+    import { Activity } from "@fusillo/ui/components/icon"
+
+    export function BadgeDemo() {
+        return (
+            <div className="grid justify-items-center gap-3 sm:flex">
+                <Badge status="default">
+                    <Activity />
+                    Active
+                </Badge>
+                <Badge status="default">
+                    Active
+                </Badge>
+                <Badge status="default">
+                    <Activity />
+                </Badge>
+                <Badge status="default">
+                    7
+                </Badge>
+            </div>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Brand
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <BadgeBrand />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {7,11,14,17} /info/ filename="badge.tsx"
+    import { Badge } from "@fusillo/ui/components/badge"
+    import { Info } from "@fusillo/ui/components/icon"
+
+    export function BadgeDemo() {
+        return (
+            <div className="grid justify-items-center gap-3 sm:flex">
+                <Badge status="info">
+                    <Info />
+                    Active
+                </Badge>
+                <Badge status="info">
+                    Active
+                </Badge>
+                <Badge status="info">
+                    <Info />
+                </Badge>
+                <Badge status="info">
+                    7
+                </Badge>
+            </div>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Danger
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <BadgeDanger />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {7,11,14,17} /danger/ filename="badge.tsx"
+    import { Badge } from "@fusillo/ui/components/badge"
+    import { XCircle } from "@fusillo/ui/components/icon"
+
+    export function BadgeDemo() {
+        return (
+            <div className="grid justify-items-center gap-3 sm:flex">
+                <Badge status="danger">
+                    <XCircle />
+                    Active
+                </Badge>
+                <Badge status="danger">
+                    Active
+                </Badge>
+                <Badge status="danger">
+                    <XCircle />
+                </Badge>
+                <Badge status="danger">
+                    7
+                </Badge>
+            </div>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <BadgeWarning />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {7,11,14,17} /warning/ filename="badge.tsx"
+    import { Badge } from "@fusillo/ui/components/badge"
+    import { AlertTriangle } from "@fusillo/ui/components/icon"
+
+    export function BadgeDemo() {
+        return (
+            <div className="grid justify-items-center gap-3 sm:flex">
+                <Badge status="warning">
+                    <AlertTriangle />
+                    Active
+                </Badge>
+                <Badge status="warning">
+                    Active
+                </Badge>
+                <Badge status="warning">
+                    <AlertTriangle />
+                </Badge>
+                <Badge status="warning">
+                    7
+                </Badge>
+            </div>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Useful links
+
+**Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
+
+<Cards className="mt-8">
+  <Card
+    title="🤖 Storybook"
+    href="https://www.stories.fusillo.design/?path=/docs/components-badge--documentation"
+  />
+  <Card
+    title="🪄 Figma"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-fusillo---design-system?node-id=233-749&t=nua4UmG9Iu1hfUAm-1"
+  />
+</Cards>

@@ -1,0 +1,46 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .alert-default {
+    @apply bg-card border-default text stroke-icon-active border;
+  }
+
+  .alert-brand {
+    @apply bg-brand-subtlest border-brand-subtlest text-brand-strong stroke-icon-brand-strong;
+  }
+
+  .alert-danger {
+    @apply bg-danger-subtlest border-danger-subtlest text-danger-strong stroke-icon-danger-strong;
+  }
+
+  .alert-warning {
+    @apply bg-warning-subtlest border-warning-subtlest text-warning-strong stroke-icon-warning-strong;
+  }
+
+  .alert-component {
+    @apply relative w-full rounded-lg border p-4;
+  }
+
+  .alert-icon {
+    @apply [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:h-6 [&>svg]:w-6 [&>svg]:stroke-2;
+  }
+
+  .alert-title {
+    @apply text-lg-medium mb-1 pl-8;
+  }
+
+  .alert-component:not(:has(> .alert-icon)) .alert-title {
+    @apply pl-0;
+  }
+
+  .alert-description {
+    @apply text-md text pl-8;
+  }
+
+  .alert-component:not(:has(> .alert-icon)) .alert-description {
+    @apply pl-0;
+  }
+}

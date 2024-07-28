@@ -1,0 +1,15 @@
+{
+  "name": "@fusillo/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "main": "index.js",
+  "files": [
+    "base.json",
+    "nextjs.json",
+    "react-library.json"
+  ],
+  "devDependencies": {
+    "tsconfig-paths": "^4.1.0"
+  }
+}

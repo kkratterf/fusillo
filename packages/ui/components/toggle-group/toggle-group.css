@@ -1,0 +1,10 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .toggle-group-component {
+    @apply flex items-center justify-center gap-1;
+  }
+}

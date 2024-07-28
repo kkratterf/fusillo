@@ -1,0 +1,15 @@
+{
+  "index": "Welcome",
+  "get-started": "Get Started",
+  "foundations": "Foundations",
+  "tokens": "Tokens",
+  "components": "Components",
+  "content": "Content",
+  "404": {
+    "type": "page",
+    "theme": {
+      "timestamp": false,
+      "typesetting": "article"
+    }
+  }
+}

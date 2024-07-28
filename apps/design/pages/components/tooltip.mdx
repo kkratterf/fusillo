@@ -1,0 +1,213 @@
+---
+title: Tooltip
+---
+
+import { Tabs, Cards, Card } from "nextra/components";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { tooltipAccessibilityData } from "@components/accessibility/tooltip.tsx";
+import { TooltipPreview, TooltipOutline, TooltipFilled, TooltipSide } from "@components/preview/tooltip.tsx";
+
+# 💠 Tooltip
+
+A floating, non-actionable label used to explain a user interface element or feature.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TooltipPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="tooltip.tsx"
+    import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@fusillo/ui/components/tooltip"
+    import { Button } from "@fusillo/ui/components/button"
+    import { FilePlus } from "@fusillo/ui/components/icon"
+
+    export function TooltipDemo() {
+      return (
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="secondary" icon={true}><FilePlus /></Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Add to library</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+The Tooltip component is a non-actionable, floating label that provides additional information about a user interface element or feature. It appears temporarily when users hover over, focus on, or tap an element.
+
+The Tooltip is used to offer brief, context-specific explanations or to guide users without adding clutter to the interface.
+
+When designing a Tooltip, keep the text concise and informative. It should be instantly readable, so avoid lengthy descriptions that may overwhelm the users.
+
+### When to use
+
+- **To explain functionality**: Use Tooltips to describe the action or effect of interactive elements like buttons, icons, or other controls when the function is not immediately apparent.
+- **To provide additional context**: Employ Tooltips to offer extra context that can help users understand less obvious interface elements.
+- **For abbreviations and jargon**: If your interface includes technical terms, acronyms, or jargon, Tooltips can be used to provide the full meaning or explanation.
+- **To avoid interface clutter**: Instead of crowding your UI with explanatory text, Tooltips can maintain a clean layout while still offering the necessary descriptions on demand.
+
+Avoid using Tooltips for critical information that users must know since they are only visible on hover or focus and not discoverable by touch on mobile devices.
+Information necessary for completing tasks should be visible and not hidden within Tooltips.
+
+Additionally, refrain from using Tooltips to provide instructions that are complex or require significant interaction, as this can lead to a frustrating user experience.
+
+## Examples
+
+### Outline
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TooltipOutline />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {12} /type="outline"/ filename="tooltip.tsx"
+    import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@fusillo/ui/components/tooltip"
+    import { Button } from "@fusillo/ui/components/button"
+    import { FilePlus } from "@fusillo/ui/components/icon"
+
+    export function TooltipDemo() {
+      return (
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="secondary" icon={true}><FilePlus /></Button>
+            </TooltipTrigger>
+            <TooltipContent type="outline">
+              <p>Add to library</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Fill
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TooltipFilled />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {12} /type="fill"/ filename="tooltip.tsx"
+    import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@fusillo/ui/components/tooltip"
+    import { Button } from "@fusillo/ui/components/button"
+    import { FilePlus } from "@fusillo/ui/components/icon"
+
+    export function TooltipDemo() {
+      return (
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="secondary" icon={true}><FilePlus /></Button>
+            </TooltipTrigger>
+            <TooltipContent type="fill">
+              <p>Add to library</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Side
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TooltipSide />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {13, 23, 33, 43} /side/ filename="tooltip.tsx"
+    import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@fusillo/ui/components/tooltip"
+    import { Button } from "@fusillo/ui/components/button"
+    import { FilePlus } from "@fusillo/ui/components/icon"
+
+    export function TooltipDemo() {
+      return (
+        <div className="grid justify-items-center sm:flex gap-5">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="secondary" icon={true}><FilePlus /></Button>
+              </TooltipTrigger>
+              <TooltipContent side="top">
+                <p>Add to library</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="secondary" icon={true}><FilePlus /></Button>
+              </TooltipTrigger>
+              <TooltipContent side="bottom">
+                <p>Add to library</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="secondary" icon={true}><FilePlus /></Button>
+              </TooltipTrigger>
+              <TooltipContent side="left">
+                <p>Add to library</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="secondary" icon={true}><FilePlus /></Button>
+              </TooltipTrigger>
+              <TooltipContent side="right">
+                <p>Add to library</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Useful links
+
+**Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
+
+<Cards className="mt-8">
+  <Card
+    title="🤖 Storybook"
+    href="https://www.stories.fusillo.design/?path=/docs/components-tooltip--documentation"
+  />
+  <Card
+    title="🪄 Figma"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-fusillo---design-system?node-id=540-8886&t=nua4UmG9Iu1hfUAm-1"
+  />
+  <Card
+    title="🐝 API Reference"
+    href="https://www.radix-ui.com/primitives/docs/components/tooltip#api-reference"
+  />
+</Cards>
+
+## Accessibility
+
+### Keyboard interactions
+
+<AccessibilityTable rows={tooltipAccessibilityData} />

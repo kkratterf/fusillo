@@ -1,0 +1,43 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .toast-component {
+    @apply bg-background text text-md-medium border-default gap-2 rounded-lg border shadow-lg;
+  }
+
+  .toast-description {
+    @apply text-md text-description;
+  }
+
+  .toast-action-button {
+    @apply bg-inverse text-inverse text-md-medium hover:opacity-hover flex h-8 items-center px-3 !important;
+  }
+
+  .toast-cancel-button {
+    @apply text text-md-medium hover:opacity-hover flex h-8 items-center bg-transparent px-3 !important;
+  }
+
+  .toast-brand {
+    @apply bg-brand border-default text-brand-inverse !important;
+    .toast-description {
+      @apply text-brand-inverse;
+    }
+  }
+
+  .toast-error {
+    @apply bg-danger border-default text-danger-inverse !important;
+    .toast-description {
+      @apply text-danger-inverse;
+    }
+  }
+
+  .toast-warning {
+    @apply bg-warning border-default text-warning-inverse !important;
+    .toast-description {
+      @apply text-warning-inverse;
+    }
+  }
+}

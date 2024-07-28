@@ -1,0 +1,38 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .avatar-component {
+    @apply relative flex shrink-0 overflow-hidden rounded-full;
+  }
+
+  .avatar-image {
+    @apply aspect-square h-full w-full;
+  }
+
+  .avatar-fallback {
+    @apply bg-muted text flex h-full w-full items-center justify-center rounded-full;
+  }
+
+  .avatar-xs {
+    @apply h-4 w-4 text-xs;
+  }
+
+  .avatar-sm {
+    @apply h-6 w-6 text-sm;
+  }
+
+  .avatar-md {
+    @apply text-md h-8 w-8;
+  }
+
+  .avatar-lg {
+    @apply text-md h-9 w-9;
+  }
+
+  .avatar-xl {
+    @apply h-10 w-10 text-lg;
+  }
+}

@@ -1,0 +1,473 @@
+---
+title: Tag
+---
+
+import { Tabs, Cards, Card } from "nextra/components";
+import {
+  TagPreview,
+  TagRed,
+  TagOrange,
+  TagAmber,
+  TagYellow,
+  TagLime,
+  TagGreen,
+  TagEmerald,
+  TagTeal,
+  TagCyan,
+  TagSky,
+  TagBlue,
+  TagIndigo,
+  TagViolet,
+  TagPurple,
+  TagFuchsia,
+  TagPink,
+  TagRose,
+} from "@components/preview/tag.tsx";
+
+# 💠 Tag
+
+Displays an element for categorizing or markup.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag>
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+The Tag component is a small label used to categorize or mark items with key information that enables quick recognition and navigation.
+
+Tags can encapsulate short pieces of text, such as keywords, statuses, or descriptors, and are often interactive, allowing users to add or remove them as filters.
+
+### When to use
+
+- **Categorization**: Use Tags to assign categories or types to items, helping users to filter or identify content based on shared characteristics.
+- **Metadata**: Implement Tags to display metadata, such as attributes of a product or article, which are not part of the main content but provide essential context.
+- **Interactivity**: When Tags represent interactive elements, such as filters or selections in a search, use them to allow users to manipulate the displayed content.
+- **Status indication**: Tags are effective for showing the status of items, like 'Completed', 'Pending', or 'New', providing a quick visual reference.
+
+Avoid using Tags for long or complex information that would be better served by a different UI element like a Tooltip or a dedicated text field. Tags should be concise to improve legibility and usability.
+
+## Examples
+
+### Red
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagRed />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="red"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="red">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Orange
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagOrange />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="orange"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="orange">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Amber
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagAmber />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="amber"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="amber">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Yellow
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagYellow />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="yellow"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="yellow">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Lime
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagLime />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="lime"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="lime">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Green
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagGreen />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="green"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="green">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Emerald
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagEmerald />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="emerald"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="emerald">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Teal
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagTeal />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="teal"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="teal">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Cyan
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagCyan />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="cyan"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="cyan">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Sky
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagSky />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="sky"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="sky">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Blue
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagBlue />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="blue"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="blue">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Indigo
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagIndigo />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="indigo"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="indigo">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Violet
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagViolet />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="violet"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="violet">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Purple
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagPurple />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="purple"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="purple">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Fuchsia
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagFuchsia />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="fuchsia"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="fuchsia">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Pink
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagPink />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="pink"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="pink">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Rose
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <TagRose />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /colors="rose"/ filename="tag.tsx"
+    import { Tag } from "@fusillo/ui/components/tag";
+    import { TagIcon } from 'lucide-react';
+
+    export function TagDemo() {
+        return (
+            <Tag colors="rose">
+                <TagIcon /> Markup
+            </Tag>
+        );
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Useful links
+
+**Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
+
+<Cards className="mt-8">
+  <Card
+    title="🤖 Storybook"
+    href="https://www.stories.fusillo.design/?path=/docs/components-tag--documentation"
+  />
+  <Card
+    title="🪄 Figma"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-fusillo---design-system?node-id=635-3323&t=nua4UmG9Iu1hfUAm-1"
+  />
+</Cards>

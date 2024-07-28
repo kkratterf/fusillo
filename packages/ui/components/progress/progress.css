@@ -1,0 +1,42 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .progress-component {
+    @apply bg-muted relative h-2 w-full overflow-hidden rounded-full;
+  }
+
+  .progress-component-default {
+    @apply bg-muted;
+  }
+
+  .progress-component-brand {
+    @apply bg-brand-subtle;
+  }
+
+  .progress-component-danger {
+    @apply bg-danger-subtle;
+  }
+
+  .progress-component-warning {
+    @apply bg-warning-subtle;
+  }
+
+  .progress-indicator {
+    @apply bg-inverse h-full w-full flex-1 rounded-full transition-all;
+    &[data-variant="default"] {
+      @apply bg-inverse;
+    }
+    &[data-variant="brand"] {
+      @apply bg-brand;
+    }
+    &[data-variant="danger"] {
+      @apply bg-danger;
+    }
+    &[data-variant="warning"] {
+      @apply bg-warning;
+    }
+  }
+}

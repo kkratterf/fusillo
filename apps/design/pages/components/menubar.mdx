@@ -1,0 +1,268 @@
+---
+title: Menubar
+---
+
+import { Tabs, Cards, Card } from "nextra/components";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { menubarAccessibilityData } from "@components/accessibility/menubar.tsx";
+import { MenubarPreview } from "@components/preview/menubar.tsx";
+
+# 💠 Menubar
+
+A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <MenubarPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="menubar.tsx"
+    import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarShortcut, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from "@fusillo/ui/components/menubar"
+
+    export function MenubarDemo() {
+        return (
+            <Menubar>
+                <MenubarMenu>
+                    <MenubarTrigger>File</MenubarTrigger>
+                    <MenubarContent>
+                    <MenubarItem>
+                        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                        New Window <MenubarShortcut>⌘N</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem disabled>New Incognito Window</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarSub>
+                        <MenubarSubTrigger>Share</MenubarSubTrigger>
+                        <MenubarSubContent>
+                        <MenubarItem>Email link</MenubarItem>
+                        <MenubarItem>Messages</MenubarItem>
+                        <MenubarItem>Notes</MenubarItem>
+                        </MenubarSubContent>
+                    </MenubarSub>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                        Print... <MenubarShortcut>⌘P</MenubarShortcut>
+                    </MenubarItem>
+                    </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                    <MenubarTrigger>Edit</MenubarTrigger>
+                    <MenubarContent>
+                        <MenubarItem>
+                            Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>
+                            Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarSub>
+                            <MenubarSubTrigger>Find</MenubarSubTrigger>
+                            <MenubarSubContent>
+                            <MenubarItem>Search the web</MenubarItem>
+                            <MenubarSeparator />
+                            <MenubarItem>Find...</MenubarItem>
+                            <MenubarItem>Find Next</MenubarItem>
+                            <MenubarItem>Find Previous</MenubarItem>
+                            </MenubarSubContent>
+                        </MenubarSub>
+                        <MenubarSeparator />
+                        <MenubarItem>Cut</MenubarItem>
+                        <MenubarItem>Copy</MenubarItem>
+                        <MenubarItem>Paste</MenubarItem>
+                    </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                    <MenubarTrigger>View</MenubarTrigger>
+                    <MenubarContent>
+                        <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
+                        <MenubarCheckboxItem checked>
+                            Always Show Full URLs
+                        </MenubarCheckboxItem>
+                        <MenubarSeparator />
+                        <MenubarItem inset>
+                            Reload <MenubarShortcut>⌘R</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem disabled inset>
+                            Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Hide Sidebar</MenubarItem>
+                    </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                    <MenubarTrigger>Profiles</MenubarTrigger>
+                    <MenubarContent>
+                        <MenubarRadioGroup value="benoit">
+                            <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
+                            <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
+                            <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
+                        </MenubarRadioGroup>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Edit...</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Add Profile...</MenubarItem>
+                    </MenubarContent>
+                </MenubarMenu>
+            </Menubar>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+The Menubar component is a horizontal strip of menus commonly found in desktop applications and is increasingly integrated into web applications for its familiarity and ease of access.
+
+It provides quick access to a consistent set of commands, often including file operations, settings, and other application-wide functions.
+
+This UI pattern is typically located at the top of the application window, just below the title bar.
+
+### When to use
+
+- **Desktop applications**: Employ a Menubar in desktop applications or complex web applications that require a comprehensive set of functionalities accessible at all times.
+- **Quick access to functions**: Utilize a Menubar to provide users with quick access to frequently used functions, improving efficiency and productivity.
+- **Feature-rich platforms**: Menubars are especially useful in feature-rich platforms where numerous features and settings might overwhelm a simpler navigation structure.
+- **Consistency in multi-window applications**: In applications where multiple windows or views are present, a Menubar maintains a consistent set of commands accessible from any point within the application.
+
+Avoid using Menubars in simple web applications where a more straightforward navigation system would suffice. They should not be used to house context-specific actions that would be better placed closer to where they are relevant in the UI. Be mindful of not overcrowding the Menubar, which can lead to difficulty in finding commands and a cluttered user interface.
+
+## Examples
+
+### Default
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <MenubarPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ```js copy filename="menubar.tsx"
+    import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarShortcut, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from "@fusillo/ui/components/menubar"
+
+    export function MenubarDemo() {
+        return (
+            <Menubar>
+                <MenubarMenu>
+                    <MenubarTrigger>File</MenubarTrigger>
+                    <MenubarContent>
+                    <MenubarItem>
+                        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                        New Window <MenubarShortcut>⌘N</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem disabled>New Incognito Window</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarSub>
+                        <MenubarSubTrigger>Share</MenubarSubTrigger>
+                        <MenubarSubContent>
+                        <MenubarItem>Email link</MenubarItem>
+                        <MenubarItem>Messages</MenubarItem>
+                        <MenubarItem>Notes</MenubarItem>
+                        </MenubarSubContent>
+                    </MenubarSub>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                        Print... <MenubarShortcut>⌘P</MenubarShortcut>
+                    </MenubarItem>
+                    </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                    <MenubarTrigger>Edit</MenubarTrigger>
+                    <MenubarContent>
+                        <MenubarItem>
+                            Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem>
+                            Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarSub>
+                            <MenubarSubTrigger>Find</MenubarSubTrigger>
+                            <MenubarSubContent>
+                            <MenubarItem>Search the web</MenubarItem>
+                            <MenubarSeparator />
+                            <MenubarItem>Find...</MenubarItem>
+                            <MenubarItem>Find Next</MenubarItem>
+                            <MenubarItem>Find Previous</MenubarItem>
+                            </MenubarSubContent>
+                        </MenubarSub>
+                        <MenubarSeparator />
+                        <MenubarItem>Cut</MenubarItem>
+                        <MenubarItem>Copy</MenubarItem>
+                        <MenubarItem>Paste</MenubarItem>
+                    </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                    <MenubarTrigger>View</MenubarTrigger>
+                    <MenubarContent>
+                        <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
+                        <MenubarCheckboxItem checked>
+                            Always Show Full URLs
+                        </MenubarCheckboxItem>
+                        <MenubarSeparator />
+                        <MenubarItem inset>
+                            Reload <MenubarShortcut>⌘R</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarItem disabled inset>
+                            Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
+                        </MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Hide Sidebar</MenubarItem>
+                    </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                    <MenubarTrigger>Profiles</MenubarTrigger>
+                    <MenubarContent>
+                        <MenubarRadioGroup value="benoit">
+                            <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
+                            <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
+                            <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
+                        </MenubarRadioGroup>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Edit...</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem inset>Add Profile...</MenubarItem>
+                    </MenubarContent>
+                </MenubarMenu>
+            </Menubar>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Useful links
+
+**Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
+
+<Cards className="mt-8">
+  <Card
+    title="🤖 Storybook"
+    href="https://www.stories.fusillo.design/?path=/docs/components-menubar--documentation"
+  />
+  <Card
+    title="🪄 Figma"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-fusillo---design-system?node-id=540-8869&t=nua4UmG9Iu1hfUAm-1"
+  />
+  <Card
+    title="🐝 API Reference"
+    href="https://www.radix-ui.com/primitives/docs/components/menubar#api-reference"
+  />
+</Cards>
+
+## Accessibility
+
+Adheres to the [Menu Button WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/) and uses [roving tabindex](https://www.w3.org/WAI/ARIA/apg/patterns/kbd_roving_tabindex) to manage focus movement among menu items.
+
+### Keyboard interactions
+
+<AccessibilityTable rows={menubarAccessibilityData} />

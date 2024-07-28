@@ -1,0 +1,90 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .calendar-component {
+    @apply p-3;
+  }
+
+  .calendar-months {
+    @apply flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0;
+  }
+
+  .calendar-month {
+    @apply space-y-4;
+  }
+
+  .calendar-caption {
+    @apply relative flex items-center justify-center pt-1;
+  }
+
+  .calendar-caption-label {
+    @apply text-md-medium;
+  }
+
+  .calendar-nav {
+    @apply flex items-center space-x-1;
+  }
+
+  .calendar-nav-button {
+    @apply opacity-disabled hover:opacity-visible h-8 w-8 p-0;
+  }
+
+  .calendar-nav-button-previus {
+    @apply absolute left-1;
+  }
+
+  .calendar-nav-button-next {
+    @apply absolute right-1;
+  }
+
+  .calendar-table {
+    @apply w-full border-collapse space-y-1;
+  }
+
+  .calendar-header-row {
+    @apply flex;
+  }
+
+  .calendar-header-cell {
+    @apply text-description text-md w-9 rounded;
+  }
+
+  .calendar-row {
+    @apply mt-2 flex w-full;
+  }
+
+  .calendar-cell {
+    @apply [&:has([aria-selected])]:bg-item-hover relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:rounded first:[&:has([aria-selected])]:rounded-l last:[&:has([aria-selected])]:rounded-r;
+  }
+
+  .calendar-day {
+    @apply text-md aria-selected:opacity-visible h-9 w-9 p-0;
+  }
+
+  .calendar-day-selected {
+    @apply bg-brand text-brand-inverse hover:bg-brand-hover focus:bg-brand focus:text-brand-inverse;
+  }
+
+  .calendar-day-today {
+    @apply bg-item-hover text;
+  }
+
+  .calendar-day-outside {
+    @apply text-description opacity-disabled;
+  }
+
+  .calendar-day-disabled {
+    @apply text-description opacity-disabled;
+  }
+
+  .calendar-day-range-middle {
+    @apply aria-selected:bg-item-hover aria-selected:text aria-selected:rounded-none;
+  }
+
+  .calendar-day-hidden {
+    @apply invisible;
+  }
+}

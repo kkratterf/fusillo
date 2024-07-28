@@ -1,0 +1,18 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .form-label {
+    @apply text-danger;
+  }
+
+  .form-description {
+    @apply text-md text-description;
+  }
+
+  .form-message {
+    @apply text-md-medium text-danger;
+  }
+}

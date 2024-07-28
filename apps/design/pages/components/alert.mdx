@@ -1,0 +1,187 @@
+---
+title: Alert
+---
+
+import { Tabs, Cards, Card } from "nextra/components";
+import { AlertPreview, AlertBrand, AlertDanger, AlertWarning } from "@components/preview/alert.tsx";
+
+# 💠 Alert
+
+Displays a callout for user attention.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <AlertPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="alert.tsx"
+    import { Alert, AlertIcon, AlertDescription, AlertTitle } from "@fusillo/ui/components/alert"
+    import { Megaphone } from "@fusillo/ui/components/icon"
+
+    export function AlertDemo() {
+      return (
+        <Alert>
+          <AlertIcon>
+            <Megaphone />
+          </AlertIcon>
+          <AlertTitle> Notice </AlertTitle>
+          <AlertDescription>
+            This is a general notification for your attention. It provides neutral information or basic reminders for everyday tasks.
+          </AlertDescription>
+        </Alert>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+The alert component is designed to capture user attention quickly and deliver important information or feedback. The message within the alert should be concise and, if an action is required, it should provide clear guidance on what the user needs to do next.
+
+Alerts are typically used to inform users about a situation or a change in status that requires their immediate attention.
+
+### When to use
+
+- **To convey urgent information**: Use alerts to inform users of urgent and potentially disruptive issues that require immediate attention, such as error messages or warnings.
+- **To disclose important changes**: If there's a significant change to the system or to the user's account, such as a system outage or a security breach, use an alert to ensure that the user is aware of the change.
+
+Avoid overusing alerts for information that is not crucial or does not require immediate action, as this can lead to alert fatigue and reduce the effectiveness of the alerts.
+
+## Examples
+
+### Default
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <AlertPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /status="default"/ filename="alert.tsx"
+    import { Alert, AlertIcon, AlertDescription, AlertTitle } from "@fusillo/ui/components/alert"
+    import { Megaphone } from "@fusillo/ui/components/icon"
+
+    export function AlertDemo() {
+      return (
+        <Alert status="default">
+          <AlertIcon>
+            <Megaphone />
+          </AlertIcon>
+          <AlertTitle> Notice </AlertTitle>
+          <AlertDescription>
+            This is a general notification for your attention. It provides neutral information or basic reminders for everyday tasks.
+          </AlertDescription>
+        </Alert>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Brand
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <AlertBrand />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /status="brand"/ filename="alert.tsx"
+    import { Alert, AlertIcon, AlertDescription, AlertTitle } from "@fusillo/ui/components/alert"
+    import { Info } from "@fusillo/ui/components/icon"
+
+    export function AlertDemo() {
+      return (
+        <Alert status="brand">
+          <AlertIcon>
+            <Info />
+          </AlertIcon>
+          <AlertTitle> Did you know? </AlertTitle>
+          <AlertDescription>
+            Here's some useful information or context about the current process or section that might be helpful to you.
+          </AlertDescription>
+        </Alert>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Danger
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <AlertDanger />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /status="danger"/ filename="alert.tsx"
+    import { Alert, AlertIcon, AlertDescription, AlertTitle } from "@fusillo/ui/components/alert"
+    import { XCircle } from "@fusillo/ui/components/icon"
+
+    export function AlertDemo() {
+      return (
+        <Alert status="danger">
+          <AlertIcon>
+            <XCircle />
+          </AlertIcon>
+          <AlertTitle> Error Detected! </AlertTitle>
+          <AlertDescription>
+            Critical issue encountered! Please address this error immediately to prevent system failure or data loss.
+          </AlertDescription>
+        </Alert>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <AlertWarning />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /status="warning"/ filename="alert.tsx"
+    import { Alert, AlertIcon, AlertDescription, AlertTitle } from "@fusillo/ui/components/alert"
+    import { AlertTriangle } from "@fusillo/ui/components/icon"
+
+    export function AlertDemo() {
+      return (
+        <Alert status="warning">
+          <AlertIcon>
+            <AlertTriangle />
+          </AlertIcon>
+          <AlertTitle> Caution Advised </AlertTitle>
+          <AlertDescription>
+            Be cautious! There are certain risks associated with this action. Review and proceed with care.
+          </AlertDescription>
+        </Alert>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Useful links
+
+**Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
+
+<Cards className="mt-8">
+  <Card
+    title="🤖 Storybook"
+    href="https://www.stories.fusillo.design/?path=/docs/components-alert--documentation"
+  />
+  <Card
+    title="🪄 Figma"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-fusillo---design-system?node-id=233-751&t=nua4UmG9Iu1hfUAm-1"
+  />
+</Cards>
+
+## Accessibility
+
+Thanks to the native [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) `alert role` the screen reader will be interrupted, announcing the new content immediately.

@@ -1,0 +1,66 @@
+@import "../../../packages/ui/components/accordion/accordion.css";
+@import "../../../packages/ui/components/alert/alert.css";
+@import "../../../packages/ui/components/alert-dialog/alert-dialog.css";
+@import "../../../packages/ui/components/avatar/avatar.css";
+@import "../../../packages/ui/components/badge/badge.css";
+@import "../../../packages/ui/components/button/button.css";
+@import "../../../packages/ui/components/calendar/calendar.css";
+@import "../../../packages/ui/components/card/card.css";
+@import "../../../packages/ui/components/checkbox/checkbox.css";
+@import "../../../packages/ui/components/command/command.css";
+@import "../../../packages/ui/components/context-menu/context-menu.css";
+@import "../../../packages/ui/components/dialog/dialog.css";
+@import "../../../packages/ui/components/dropdown-menu/dropdown-menu.css";
+@import "../../../packages/ui/components/form/form.css";
+@import "../../../packages/ui/components/hover-card/hover-card.css";
+@import "../../../packages/ui/components/input/input.css";
+@import "../../../packages/ui/components/label/label.css";
+@import "../../../packages/ui/components/menubar/menubar.css";
+@import "../../../packages/ui/components/popover/popover.css";
+@import "../../../packages/ui/components/progress/progress.css";
+@import "../../../packages/ui/components/radio-group/radio-group.css";
+@import "../../../packages/ui/components/resizable/resizable.css";
+@import "../../../packages/ui/components/scroll-area/scroll-area.css";
+@import "../../../packages/ui/components/segmented/segmented.css";
+@import "../../../packages/ui/components/select/select.css";
+@import "../../../packages/ui/components/separator/separator.css";
+@import "../../../packages/ui/components/sheet/sheet.css";
+@import "../../../packages/ui/components/skeleton/skeleton.css";
+@import "../../../packages/ui/components/slider/slider.css";
+@import "../../../packages/ui/components/switch/switch.css";
+@import "../../../packages/ui/components/table/table.css";
+@import "../../../packages/ui/components/tabs/tabs.css";
+@import "../../../packages/ui/components/tag/tag.css";
+@import "../../../packages/ui/components/textarea/textarea.css";
+@import "../../../packages/ui/components/toast/toast.css";
+@import "../../../packages/ui/components/toggle/toggle.css";
+@import "../../../packages/ui/components/toggle-group/toggle-group.css";
+@import "../../../packages/ui/components/tooltip/tooltip.css";
+
+@font-face {
+  font-family: "GeistSans";
+  src: url("../public/fonts/GeistSans.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GeistMono";
+  src: url("../public/fonts/GeistMono.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "GeistSans", sans-serif !important;
+}
+
+input {
+  @apply border-default bg-card text-md ring-offset-background file:text-md-medium file:text placeholder:text-placeholder focus-visible:border-default focus-visible:ring-brand focus-visible:ring-offset-background disabled:opacity-disabled flex h-9 w-full rounded border px-3 py-1 file:border-0 file:bg-transparent file:py-[2px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed !important;
+}
+
+.font-mono {
+  font-family: "GeistMono", monospace !important;
+}

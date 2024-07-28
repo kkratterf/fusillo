@@ -1,0 +1,22 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .slider-component {
+    @apply relative flex w-full touch-none select-none items-center;
+  }
+
+  .slider-track {
+    @apply bg-brand-subtle relative h-2 w-full grow overflow-hidden rounded-full;
+  }
+
+  .slider-range {
+    @apply bg-brand absolute h-full;
+  }
+
+  .slider-thumb {
+    @apply border-brand bg-card ring-offset-background focus-visible:ring-brand disabled:opacity-disabled block h-[20px] w-[20px] cursor-grab rounded-full border-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none;
+  }
+}

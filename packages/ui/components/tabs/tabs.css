@@ -1,0 +1,18 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .tabs-list {
+    @apply border-default text-description inline-flex h-9 w-full items-center border-b;
+  }
+
+  .tabs-trigger {
+    @apply text-md-medium ring-offset-background focus-visible:ring-brand disabled:opacity-disabled data-[state=active]:border-brand data-[state=active]:text-brand inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap border-b-2 border-transparent px-3 py-1 transition-all focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none data-[state=active]:border-b-2 data-[state=active]:focus-visible:border-0 [&>svg]:h-4 [&>svg]:w-4;
+  }
+
+  .tabs-content {
+    @apply ring-offset-background focus-visible:ring-brand mt-2 p-3 focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+}

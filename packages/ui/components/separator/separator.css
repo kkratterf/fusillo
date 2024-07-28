@@ -1,0 +1,18 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .separator-component {
+    @apply bg-border shrink-0;
+  }
+
+  .separator-horizontal {
+    @apply h-[1px] w-full;
+  }
+
+  .separator-vertical {
+    @apply h-full min-h-2 w-[1px];
+  }
+}

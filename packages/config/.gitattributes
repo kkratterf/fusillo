@@ -1,0 +1,2 @@
+# Exclude tokens
+tokens/**/* linguist-vendored

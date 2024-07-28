@@ -1,0 +1,238 @@
+---
+title: Card
+---
+
+import { Tabs, Cards, Card } from "nextra/components";
+import { CardPreview, CardWithMapping } from "@components/preview/card.tsx";
+
+# 💠 Card
+
+Displays a card with header, content, and footer.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <CardPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="card.tsx"
+    import * as React from "react"
+
+    import { Button } from "@fusillo/ui/components/button"
+    import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@fusillo/ui/components/card"
+    import { Input } from "@fusillo/ui/components/input"
+    import { Label } from "@fusillo/ui/components/label"
+    import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@fusillo/ui/components/select"
+
+    export function CardDemo() {
+        return (
+            <Card className="w-96">
+                <CardHeader>
+                    <CardTitle>Create project</CardTitle>
+                    <CardDescription>Deploy your new project in one-click.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <form>
+                        <div className="grid w-full items-center gap-4">
+                            <div className="flex flex-col space-y-3">
+                                <Label htmlFor="name">Name</Label>
+                                <Input id="name" placeholder="Name of your project" />
+                            </div>
+                            <div className="flex flex-col space-y-3">
+                                <Label htmlFor="framework">Framework</Label>
+                                <Select>
+                                    <SelectTrigger id="framework">
+                                    <SelectValue placeholder="Select" />
+                                    </SelectTrigger>
+                                    <SelectContent position="popper">
+                                    <SelectItem value="next">Next.js</SelectItem>
+                                    <SelectItem value="sveltekit">SvelteKit</SelectItem>
+                                    <SelectItem value="astro">Astro</SelectItem>
+                                    <SelectItem value="nuxt">Nuxt.js</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                        </div>
+                    </form>
+                </CardContent>
+                <CardFooter className="flex justify-between">
+                    <Button variant="secondary">Cancel</Button>
+                    <Button>Deploy</Button>
+                </CardFooter>
+            </Card>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+The Card component is a versatile container used to group related pieces of information together within a distinct visual block. It usually consists of a header, content area, and footer.
+
+Cards are commonly used in interfaces to display information in a digestible format, making it easy for users to scan and interact with data, such as products, articles, or profiles.
+
+### When to use
+
+- **Content segmentation**: Use Cards to segment content into manageable chunks, making complex information easier to understand at a glance.
+- **Interactive elements**: Employ Cards when the grouped information needs to be interactive, such as clickable entities that lead to detailed views.
+- **Visual consistency**: Utilize Cards to create a uniform appearance for different pieces of content that belong to the same category, ensuring a cohesive look and feel.
+- **Responsive layouts**: Cards can be easily rearranged to fit different screen sizes and layouts, making them ideal for responsive design.
+
+Avoid using Cards to contain a single piece of information with no contextual relationship to other elements; simpler UI elements may suffice. Do not overload Cards with too much information or too many actions, as this can lead to a cluttered appearance and cognitive overload for users.
+
+## Examples
+
+### Default
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <CardPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="card.tsx"
+    import * as React from "react"
+
+    import { Button } from "@fusillo/ui/components/button"
+    import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@fusillo/ui/components/card"
+    import { Input } from "@fusillo/ui/components/input"
+    import { Label } from "@fusillo/ui/components/label"
+    import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@fusillo/ui/components/select"
+
+    export function CardDemo() {
+        return (
+            <Card className="w-96">
+                <CardHeader>
+                    <CardTitle>Create project</CardTitle>
+                    <CardDescription>Deploy your new project in one-click.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <form>
+                        <div className="grid w-full items-center gap-4">
+                            <div className="flex flex-col space-y-3">
+                                <Label htmlFor="name">Name</Label>
+                                <Input id="name" placeholder="Name of your project" />
+                            </div>
+                            <div className="flex flex-col space-y-3">
+                                <Label htmlFor="framework">Framework</Label>
+                                <Select>
+                                    <SelectTrigger id="framework">
+                                    <SelectValue placeholder="Select" />
+                                    </SelectTrigger>
+                                    <SelectContent position="popper">
+                                    <SelectItem value="next">Next.js</SelectItem>
+                                    <SelectItem value="sveltekit">SvelteKit</SelectItem>
+                                    <SelectItem value="astro">Astro</SelectItem>
+                                    <SelectItem value="nuxt">Nuxt.js</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                        </div>
+                    </form>
+                </CardContent>
+                <CardFooter className="flex justify-between">
+                    <Button variant="secondary">Cancel</Button>
+                    <Button>Deploy</Button>
+                </CardFooter>
+            </Card>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### With mapping
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <CardWithMapping />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy
+    import { BellRing, Check } from "@fusillo/ui/components/icon"
+    import { Button } from "@fusillo/ui/components/button"
+    import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@fusillo/ui/components/card"
+    import { Switch } from "@fusillo/ui/components/switch"
+
+    const notifications = [
+        {
+            title: "Your call has been confirmed.",
+            description: "1 hour ago",
+        },
+        {
+            title: "You have a new message!",
+            description: "1 hour ago",
+        },
+        {
+            title: "Your subscription is expiring soon!",
+            description: "2 hours ago",
+        },
+    ]
+
+    type CardProps = React.ComponentProps<typeof Card>
+
+    export function CardDemo({ className, ...props }: CardProps) {
+        return (
+            <Card className={cn('w-[460px]', className)} {...props}>
+                <CardHeader>
+                    <CardTitle>Notifications</CardTitle>
+                    <CardDescription>You have 3 unread messages.</CardDescription>
+                </CardHeader>
+                <CardContent className="grid gap-4">
+                    <div className=" flex items-center space-x-4 rounded border border-default p-4">
+                        <BellRing />
+                        <div className="flex-1 space-y-1">
+                            <p className="text-md-medium leading-none">Push Notifications</p>
+                            <p className="text-md text-description">
+                                Send notifications to device.
+                            </p>
+                        </div>
+                        <Switch />
+                    </div>
+                    <div className="p-4">
+                    {notifications.map((notification, index) => (
+                        <div
+                            key={index}
+                            className="mb-2 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
+                        >
+                            <span className="flex h-2 w-2 translate-y-1 rounded-full bg-brand" />
+                            <div className="space-y-1">
+                                <p className="text-md-medium leading-none">
+                                    {notification.title}
+                                </p>
+                                <p className="text-md text-description">
+                                    {notification.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                    </div>
+                </CardContent>
+                <CardFooter>
+                    <Button className="w-full">
+                        <Check /> Mark all as read
+                    </Button>
+                </CardFooter>
+            </Card>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Useful links
+
+**Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
+
+<Cards className="mt-8">
+  <Card
+    title="🤖 Storybook"
+    href="https://www.stories.fusillo.design/?path=/docs/components-card--documentation"
+  />
+  <Card
+    title="🪄 Figma"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-fusillo---design-system?node-id=233-752&t=nua4UmG9Iu1hfUAm-1"
+  />
+</Cards>

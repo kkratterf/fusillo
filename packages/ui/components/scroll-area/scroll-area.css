@@ -1,0 +1,30 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .scroll-area-component {
+    @apply relative overflow-hidden;
+  }
+
+  .scroll-area-viewport {
+    @apply h-full w-full rounded-[inherit];
+  }
+
+  .scroll-bar-component {
+    @apply flex touch-none select-none transition-colors;
+  }
+
+  .scroll-bar-vertical {
+    @apply h-full w-2 border-l border-l-transparent p-[1px];
+  }
+
+  .scroll-bar-horizontal {
+    @apply h-2 border-t border-t-transparent p-[1px];
+  }
+
+  .scroll-area-thumb {
+    @apply bg-border hover:bg-border-hover relative rounded-full transition-colors duration-300;
+  }
+}

@@ -1,0 +1,20 @@
+/* Import css files */
+@import "./foundations.css";
+@import "./tokens.css";
+
+/* Import tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-default;
+  }
+
+  body {
+    @apply bg-background text font-sans antialiased;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+}

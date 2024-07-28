@@ -1,0 +1,50 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .sheet-overlay {
+    @apply bg-mask fixed inset-0 z-50 backdrop-blur-sm;
+  }
+
+  .sheet-component {
+    @apply bg-elevated fixed z-50 gap-4 p-6 shadow-lg transition ease-in-out;
+  }
+
+  .sheet-top {
+    @apply border-b-default inset-x-0 top-0 border-b;
+  }
+
+  .sheet-bottom {
+    @apply border-t-default inset-x-0 bottom-0 border-t;
+  }
+
+  .sheet-left {
+    @apply border-r-default inset-y-0 left-0 h-full border-r;
+  }
+
+  .sheet-right {
+    @apply border-l-default inset-y-0 right-0  h-full border-l;
+  }
+
+  .sheet-close {
+    @apply ring-offset-background focus:ring-brand data-[state=open]:bg-item [&>svg]:stroke-icon [&>svg]:hover:stroke-icon-hover absolute right-4 top-4 rounded-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none [&>svg]:h-4 [&>svg]:w-4;
+  }
+
+  .sheet-header {
+    @apply flex flex-col space-y-2 text-center sm:text-left;
+  }
+
+  .sheet-footer {
+    @apply flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2;
+  }
+
+  .sheet-title {
+    @apply text-heading-body text;
+  }
+
+  .sheet-description {
+    @apply text-md text-description;
+  }
+}

@@ -1,0 +1,144 @@
+---
+title: Progress
+---
+
+import { Tabs, Cards, Card } from "nextra/components";
+import {
+  ProgressPreview,
+  ProgressDefault,
+  ProgressBrand,
+  ProgressDanger,
+  ProgressWarning,
+} from "@components/preview/progress.tsx";
+
+# 💠 Progress
+
+Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <ProgressPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="progress.tsx"
+    import { Progress } from "@fusillo/ui/components/progress"
+
+    export function ProgressDemo() {
+        return <Progress value={33} />
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+The Progress component visually represents the completion percentage of a task or process, providing users with feedback on their progress. It's typically displayed as a progress bar that fills horizontally as the task advances.
+
+The Progress component is a determinate indicator, meaning it should be used when the length of the task is known and measurable.
+
+### When to use
+
+- **Task completion feedback**: Use a Progress component to give users immediate feedback on the completion of a process, such as file upload or download progress.
+- **Step-by-step processes**: Employ a Progress component in multi-step processes to indicate how far along the user is and how much is left, such as during checkout or in a survey.
+- **Loading content**: Utilize a Progress component for loading content when you can determine how long the process will take or how much content needs to be loaded.
+- **Educational and training contexts**: Progress bars can be used to motivate and inform users during educational or training modules, showing how they are advancing through the material.
+
+Avoid using Progress components for indeterminate processes where the time to completion is unknown; in such cases, an indeterminate loader or spinner might be more appropriate.
+
+## Examples
+
+### Default
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <ProgressDefault />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {4} /status="default"/ filename="progress.tsx"
+    import { Progress } from "@fusillo/ui/components/progress"
+
+    export function ProgressDemo() {
+        return <Progress status="default" value={33} />
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Brand
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <ProgressBrand />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {4} /status="brand"/ filename="progress.tsx"
+    import { Progress } from "@fusillo/ui/components/progress"
+
+    export function ProgressDemo() {
+        return <Progress status="brand" value={33} />
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Danger
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <ProgressDanger />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {4} /status="danger"/ filename="progress.tsx"
+    import { Progress } from "@fusillo/ui/components/progress"
+
+    export function ProgressDemo() {
+        return <Progress status="danger" value={33} />
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <ProgressWarning />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {4} /status="warning"/ filename="progress.tsx"
+    import { Progress } from "@fusillo/ui/components/progress"
+
+    export function ProgressDemo() {
+        return <Progress status="warning" value={33} />
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Useful links
+
+**Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
+
+<Cards className="mt-8">
+  <Card
+    title="🤖 Storybook"
+    href="https://www.stories.fusillo.design/?path=/docs/components-progress--documentation"
+  />
+  <Card
+    title="🪄 Figma"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-fusillo---design-system?node-id=540-8872&t=nua4UmG9Iu1hfUAm-1"
+  />
+  <Card
+    title="🐝 API Reference"
+    href="https://www.radix-ui.com/primitives/docs/components/progress#api-reference"
+  />
+</Cards>
+
+## Accessibility
+
+Adheres to the `progressbar` [role requirements](https://www.w3.org/WAI/ARIA/apg/patterns/meter/).

@@ -1,0 +1,149 @@
+---
+title: Label
+---
+
+import { Tabs, Cards, Card } from "nextra/components";
+import {
+  LabelPreview,
+  LabelWithCheckbox,
+  LabelWithInput,
+  LabelWithTextArea,
+} from "@components/preview/label.tsx";
+
+# 💠 Label
+
+Renders an accessible label associated with controls.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <LabelPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="label.tsx"
+    import { Checkbox } from "@fusillo/ui/components/checkbox"
+    import { Label } from "@fusillo/ui/components/label"
+
+    export function LabelDemo() {
+        return (
+            <div className="flex items-center space-x-2">
+                <Checkbox id="terms" />
+                <Label htmlFor="terms">Accept terms and conditions</Label>
+            </div>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+The Label component is a fundamental HTML element that provides an accessible name for interactive controls such as text fields, checkboxes, radio buttons, and other form elements.
+
+By binding a label to a specific control, users can interact with the input more easily, especially on touch screens, and it ensures that the form element is announced correctly by screen readers.
+
+### When to use
+
+- **Form controls association**: Use a Label for every form control to provide a textual descriptor that aids users in understanding the purpose of the control.
+- **Improving touch targets**: Employ Labels to increase the touch target area for controls, making them easier to interact with, especially on mobile devices.
+- **Accessibility enhancement**: Utilize Labels to improve accessibility. Screen readers rely on labels to announce form controls, aiding users who rely on assistive technology to navigate and interact with your application.
+- **Visual consistency**: A consistent styling and positioning of Labels help maintain visual consistency in your forms, leading to a more cohesive user interface and a better user experience.
+
+Avoid using labels as placeholders within form controls, as this can cause usability issues when the placeholder text disappears on focus or entry. Do not use labels for decorative purposes; their primary function is to describe and indicate the purpose of a form control. Labels should not be overly verbose; they should be brief yet descriptive enough to be understood out of context.
+
+## Examples
+
+### With checkbox
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <LabelWithCheckbox />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {1,7} /Checkbox/ filename="label.tsx"
+    import { Checkbox } from "@fusillo/ui/components/checkbox"
+    import { Label } from "@fusillo/ui/components/label"
+
+    export function LabelDemo() {
+        return (
+            <div className="flex items-center space-x-2">
+                <Checkbox id="terms" />
+                <Label htmlFor="terms">Accept terms and conditions</Label>
+            </div>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### With input
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <LabelWithInput />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {1,8} /Input/ filename="label.tsx"
+    import { Input } from "@fusillo/ui/components/input"
+    import { Label } from "@fusillo/ui/components/label"
+
+    export function LabelDemo() {
+        return (
+            <div className="grid w-full max-w-sm items-center gap-3">
+                <Label htmlFor="email">Email</Label>
+                <Input type="email" id="email" placeholder="Email" />
+            </div>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### With textarea
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <LabelWithTextArea />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {1,8} /Textarea/ filename="label.tsx"
+    import { Textarea } from "@fusillo/ui/components/textarea"
+    import { Label } from "@fusillo/ui/components/label"
+
+    export function LabelDemo() {
+        return (
+            <div className="grid w-full gap-3">
+                <Label htmlFor="message">Your story</Label>
+                <Textarea placeholder="Once upon a time..." id="message" />
+            </div>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Useful links
+
+**Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
+
+<Cards className="mt-8">
+  <Card
+    title="🤖 Storybook"
+    href="https://www.stories.fusillo.design/?path=/docs/components-label--documentation"
+  />
+  <Card
+    title="🪄 Figma"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-fusillo---design-system?node-id=540-8868&t=nua4UmG9Iu1hfUAm-1"
+  />
+  <Card
+    title="🐝 API Reference"
+    href="https://www.radix-ui.com/primitives/docs/components/label#api-reference"
+  />
+</Cards>
+
+## Accessibility
+
+This component is based on the native `label` element, it will automatically apply the correct labelling when wrapping controls or using the `htmlFor` attribute. For your own custom controls to work correctly, ensure they use native elements such as `button` or `input` as a base.

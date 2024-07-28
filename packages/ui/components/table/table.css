@@ -1,0 +1,42 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .table-container {
+    @apply relative w-full overflow-auto;
+  }
+
+  .table-component {
+    @apply text-md w-full caption-bottom;
+  }
+
+  .table-header {
+    @apply border-b-default [&_tr]:border-b;
+  }
+
+  .table-body {
+    @apply [&_tr:last-child]:border-0;
+  }
+
+  .table-footer {
+    @apply bg-item-hover text font-medium;
+  }
+
+  .table-row {
+    @apply border-b-default hover:bg-item-hover data-[state=selected]:bg-item-selected border-b transition-colors;
+  }
+
+  .table-head {
+    @apply text-description h-12 px-4 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0;
+  }
+
+  .table-cell {
+    @apply p-4 align-middle [&:has([role=checkbox])]:pr-0;
+  }
+
+  .table-caption {
+    @apply text-md text-description mt-4;
+  }
+}

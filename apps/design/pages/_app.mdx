@@ -1,0 +1,14 @@
+import { Analytics } from '@vercel/analytics/react';
+import { ToastProvider } from "@fusillo/ui/components/toast";
+import Main from "@components/main";
+import "../styles/globals.css";
+
+export default function App({ Component, pageProps }) {
+  return (
+    <Main>
+      <Component {...pageProps} />
+      <ToastProvider />
+      <Analytics />
+    </Main>
+  );
+}

@@ -1,0 +1,34 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .accordion-root {
+    @apply bg-background;
+  }
+
+  .accordion-item {
+    @apply border-b-default border-b last:border-none;
+  }
+
+  .accordion-trigger {
+    @apply text-lg-medium text bg-item hover:bg-item-hover ring-offset-background focus-visible:ring-brand flex flex-1 items-center justify-between p-4 transition-all focus-visible:z-50 focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 [&[data-state=open]>svg]:rotate-180;
+  }
+
+  .accordion-content {
+    @apply bg-subtle border-t-default data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden border-t transition-all;
+  }
+
+  .accordion-content-children {
+    @apply text-md text p-4;
+  }
+
+  .accordion-header {
+    @apply flex;
+  }
+
+  .accordion-icon {
+    @apply stroke-icon h-4 w-4 shrink-0 transition-transform duration-200;
+  }
+}

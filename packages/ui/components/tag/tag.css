@@ -1,0 +1,79 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* tag */
+  .tag-component {
+    @apply text-md inline-flex h-6 items-center gap-1 rounded-full px-2 py-1 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:stroke-2;
+  }
+
+  .tag-red {
+    @apply bg-chart-red text-chart-red stroke-icon-chart-red;
+  }
+
+  .tag-orange {
+    @apply bg-chart-orange text-chart-orange stroke-icon-chart-orange;
+  }
+
+  .tag-amber {
+    @apply bg-chart-amber text-chart-amber stroke-icon-chart-amber;
+  }
+
+  .tag-yellow {
+    @apply bg-chart-yellow text-chart-yellow stroke-icon-chart-yellow;
+  }
+
+  .tag-lime {
+    @apply bg-chart-lime text-chart-lime stroke-icon-chart-lime;
+  }
+
+  .tag-green {
+    @apply bg-chart-green text-chart-green stroke-icon-chart-green;
+  }
+
+  .tag-emerald {
+    @apply bg-chart-emerald text-chart-emerald stroke-icon-chart-emerald;
+  }
+
+  .tag-teal {
+    @apply bg-chart-teal text-chart-teal stroke-icon-chart-teal;
+  }
+
+  .tag-cyan {
+    @apply bg-chart-cyan text-chart-cyan stroke-icon-chart-cyan;
+  }
+
+  .tag-sky {
+    @apply bg-chart-sky text-chart-sky stroke-icon-chart-sky;
+  }
+
+  .tag-blue {
+    @apply bg-chart-blue text-chart-blue stroke-icon-chart-blue;
+  }
+
+  .tag-indigo {
+    @apply bg-chart-indigo text-chart-indigo stroke-icon-chart-indigo;
+  }
+
+  .tag-violet {
+    @apply bg-chart-violet text-chart-violet stroke-icon-chart-violet;
+  }
+
+  .tag-purple {
+    @apply bg-chart-purple text-chart-purple stroke-icon-chart-purple;
+  }
+
+  .tag-fuchsia {
+    @apply bg-chart-fuchsia text-chart-fuchsia stroke-icon-chart-fuchsia;
+  }
+
+  .tag-pink {
+    @apply bg-chart-pink text-chart-pink stroke-icon-chart-pink;
+  }
+
+  .tag-rose {
+    @apply bg-chart-rose text-chart-rose stroke-icon-chart-rose;
+  }
+}

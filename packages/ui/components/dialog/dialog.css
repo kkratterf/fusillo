@@ -1,0 +1,34 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .dialog-overlay {
+    @apply bg-mask fixed inset-0 z-50 backdrop-blur-sm;
+  }
+
+  .dialog-content {
+    @apply border-default bg-elevated fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border p-6 shadow-lg duration-200 sm:rounded-lg md:w-full;
+  }
+
+  .dialog-close {
+    @apply stroke-icon ring-offset-elevated hover:stroke-icon-hover focus:ring-brand data-[state=open]:bg-item-hover data-[state=open]:text-description absolute right-4 top-4 rounded-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none;
+  }
+
+  .dialog-header {
+    @apply flex flex-col space-y-2 text-center sm:text-left;
+  }
+
+  .dialog-footer {
+    @apply flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2;
+  }
+
+  .dialog-title {
+    @apply text-heading-body leading-none tracking-tight;
+  }
+
+  .dialog-description {
+    @apply text-md text-description;
+  }
+}

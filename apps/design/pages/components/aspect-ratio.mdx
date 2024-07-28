@@ -1,0 +1,163 @@
+---
+title: Aspect Ratio
+---
+
+import { Tabs, Cards, Card } from "nextra/components";
+import {
+  AspectRatioPreview,
+  AspectRatio16x9,
+  AspectRatio4x3,
+  AspectRatio3x2,
+} from "@components/preview/aspect-ratio.tsx";
+
+# 💠 Aspect Ratio
+
+Displays content within a desired ratio.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <AspectRatioPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="aspect-ratio.tsx"
+    import { AspectRatio } from "@fusillo/ui/components/aspect-ratio"
+    import Image from "next/image"
+
+    export function AspectRatioDemo() {
+      return (
+        <AspectRatio ratio={16 / 9} className="bg-muted">
+          <Image
+            src="https://images.unsplash.com/photo-1576075796033-848c2a5f3696?w=800&dpr=2&q=80"
+            alt="Photo by Alvaro Pinot"
+            fill
+            className="rounded object-cover"
+          />
+        </AspectRatio>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+The Aspect Ratio component is designed to display content within a specific width-to-height ratio, ensuring consistent presentation across different display sizes and devices.
+
+It is particularly useful for embedding media such as images, videos, or iframes while maintaining their intrinsic proportions without distortion.
+
+By locking the aspect ratio, the component ensures that the content scales responsively while adhering to the set ratio, providing a seamless viewing experience.
+
+### When to use
+
+- **For media content**: Use the Aspect Ratio component when displaying images, videos, or other visual media that require a specific aspect ratio to preserve their composition.
+- **For embeds**: Utilize it for embedded content such as maps, tweets, or videos from third-party services where maintaining the original aspect ratio is crucial.
+- **For responsive design**: Employ the Aspect Ratio component in responsive layouts to maintain the aspect ratio of content as the viewport size changes.
+- **For design consistency**: Apply it to create a uniform appearance for elements that benefit from a consistent shape, such as cards, tiles, or thumbnail galleries.
+
+Avoid using the Aspect Ratio component for content that needs to dynamically fill the available space without a fixed ratio, or where the content's aspect ratio should change based on different criteria such as the orientation of the device.
+
+## Examples
+
+### Ratio 16/9
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <AspectRatio16x9 />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /ratio/ filename="aspect-ratio.tsx"
+    import { AspectRatio } from "@fusillo/ui/components/aspect-ratio"
+    import Image from "next/image"
+
+    export function AspectRatioDemo() {
+      return (
+        <AspectRatio ratio={16 / 9} className="bg-muted">
+          <Image
+            src="https://images.unsplash.com/photo-1576075796033-848c2a5f3696?w=800&dpr=2&q=80"
+            alt="Photo by Alvaro Pinot"
+            fill
+            className="rounded object-cover"
+          />
+        </AspectRatio>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Ratio 4/3
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <AspectRatio4x3 />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /ratio/ filename="aspect-ratio.tsx"
+    import { AspectRatio } from "@fusillo/ui/components/aspect-ratio"
+    import Image from "next/image"
+
+    export function AspectRatioDemo() {
+      return (
+        <AspectRatio ratio={4 / 3} className="bg-muted">
+          <Image
+            src="https://images.unsplash.com/photo-1576075796033-848c2a5f3696?w=800&dpr=2&q=80"
+            alt="Photo by Alvaro Pinot"
+            fill
+            className="rounded object-cover"
+          />
+        </AspectRatio>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Ratio 3/2
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <AspectRatio3x2 />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy {6} /ratio/ filename="aspect-ratio.tsx"
+    import { AspectRatio } from "@fusillo/ui/components/aspect-ratio"
+    import Image from "next/image"
+
+    export function AspectRatioDemo() {
+      return (
+        <AspectRatio ratio={3 / 2} className="bg-muted">
+          <Image
+            src="https://images.unsplash.com/photo-1576075796033-848c2a5f3696?w=800&dpr=2&q=80"
+            alt="Photo by Alvaro Pinot"
+            fill
+            className="rounded object-cover"
+          />
+        </AspectRatio>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Useful links
+
+**Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
+
+<Cards className="mt-8">
+  <Card
+    title="🤖 Storybook"
+    href="https://www.stories.fusillo.design/?path=/docs/components-aspectratio--documentation"
+  />
+  <Card
+    title="🪄 Figma"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-fusillo---design-system?node-id=164-294&t=nua4UmG9Iu1hfUAm-1"
+  />
+  <Card
+    title="🐝 API Reference"
+    href="https://www.radix-ui.com/primitives/docs/components/aspect-ratio#api-reference"
+  />
+</Cards>

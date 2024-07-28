@@ -1,0 +1,209 @@
+---
+title: Calendar
+---
+
+import { Tabs, Cards, Card } from "nextra/components";
+import { CalendarPreview, CalendarWithForm } from "@components/preview/calendar.tsx";
+
+# 💠 Calendar
+
+An interactive calendar for date selection experiences.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <CalendarPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="calendar.tsx"
+    "use client"
+
+    import * as React from "react"
+    import { Calendar } from "@fusillo/ui/components/calendar"
+
+    export function CalendarDemo() {
+        const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+        return (
+            <Calendar
+              mode="single"
+              selected={date}
+              onSelect={setDate}
+              className="rounded border border-default"
+            />
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+The Calendar component is an interactive UI element that allows users to view and select dates within a graphical layout representing days, weeks, and months.
+
+This component is often used to schedule events, book appointments, or input dates in forms.
+
+### When to use
+
+- **Date selection**: Use a Calendar when users need to select dates for tasks like booking, scheduling, or entering their date of birth.
+- **Event planning**: Employ a Calendar for planning and managing events, allowing users to see an overview of their scheduled activities.
+- **User-friendly interfaces**: Calendars can make the date selection process more user-friendly by providing a visual context, which is particularly useful in complex scheduling applications.
+
+Avoid using a Calendar for simple date entry that can be handled with a basic input field. Don't rely on the Calendar as the sole date input method; offer a manual input option for users who prefer to type the date directly. Ensure that the Calendar does not become a barrier to completing tasks, especially for users with disabilities or those using devices with small screens.
+
+## About
+
+The `<Calendar />` component is built on top of [React DayPicker](https://react-day-picker.js.org/).
+
+You can use the `<Calendar />` component to build a date picker. See the [DayPicker documentation](/components/date-picker) for more information.
+
+## Example
+
+### Default
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <CalendarPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="calendar.tsx"
+    "use client"
+
+    import * as React from "react"
+    import { Calendar } from "@fusillo/ui/components/calendar"
+
+    export function CalendarDemo() {
+        const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+        return (
+            <Calendar
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            className="rounded border border-default"
+            />
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### With form
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <CalendarWithForm />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="calendar.tsx"
+    "use client"
+
+    import { zodResolver } from "@hookform/resolvers/zod"
+    import { format } from "date-fns"
+    import { CalendarIcon } from "@fusillo/ui/components/icon"
+    import { useForm } from "react-hook-form"
+    import * as z from "zod"
+
+    import { cn } from "@/lib/twMerge"
+    import { Button } from "@fusillo/ui/components/button"
+    import { Calendar } from "@fusillo/ui/components/calendar"
+    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@fusillo/ui/components/form"
+    import { Popover, PopoverContent, PopoverTrigger } from "@fusillo/ui/components/popover"
+    import { toast } from "@fusillo/ui/components/toast/use-toast"
+
+    const FormSchema = z.object({
+        dob: z.date({
+            required_error: "A date of birth is required.",
+        }),
+    })
+
+    export function CalendarForm() {
+        const form = useForm<z.infer<typeof FormSchema>>({
+            resolver: zodResolver(FormSchema),
+        })
+
+        function onSubmit(data: z.infer<typeof FormSchema>) {
+            toast({
+              title: "You submitted the following values:",
+              description: (
+                  <pre className="mt-2 w-[340px] rounded bg-subtle border border-default p-4">
+                    <code className="text">{JSON.stringify(data, null, 2)}</code>
+                  </pre>
+              ),
+            })
+        }
+
+        return (
+            <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                  <FormField
+                    control={form.control}
+                    name="dob"
+                    render={({ field }) => (
+                      <FormItem className="flex flex-col">
+                        <FormLabel>Date of birth</FormLabel>
+                        <Popover>
+                          <PopoverTrigger asChild>
+                            <FormControl>
+                              <Button
+                                variant={'secondary'}
+                                className={cn(
+                                  'w-60 pl-3 text-left font-normal',
+                                  !field.value && 'text-placeholder'
+                                )}
+                              >
+                                {field.value ? (
+                                  format(field.value, 'PPP')
+                                ) : (
+                                  <span>Pick a date</span>
+                                )}
+                                <CalendarIcon className="ml-auto h-4 w-4 opacity-disabled" />
+                              </Button>
+                            </FormControl>
+                          </PopoverTrigger>
+                          <PopoverContent className="w-auto p-0" align="start">
+                            <Calendar
+                              mode="single"
+                              selected={field.value}
+                              onSelect={field.onChange}
+                              disabled={(date) =>
+                                date > new Date() || date < new Date('1900-01-01')
+                              }
+                              initialFocus
+                              className="calendar-fix"
+                            />
+                          </PopoverContent>
+                        </Popover>
+                        <FormDescription>
+                          Your date of birth is used to calculate your age.
+                        </FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Button type="submit">Submit</Button>
+                </form>
+            </Form>
+        )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Useful links
+
+**Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
+
+<Cards className="mt-8">
+  <Card
+    title="🤖 Storybook"
+    href="https://www.stories.fusillo.design/?path=/docs/components-calendar--documentation"
+  />
+  <Card
+    title="🪄 Figma"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-fusillo---design-system?node-id=233-750&t=nua4UmG9Iu1hfUAm-1"
+  />
+  <Card title="📄 React DayPicker Docs" href="https://react-day-picker.js.org/" />
+</Cards>

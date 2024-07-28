@@ -1,0 +1,62 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .context-menu-subtrigger {
+    @apply text-md focus:bg-item-hover focus:text data-[state=open]:bg-item-hover data-[state=open]:text flex h-8 cursor-default select-none items-center rounded-sm px-2 py-1 outline-none;
+  }
+
+  .context-menu-subtrigger-icon {
+    @apply ml-auto h-4 w-4;
+  }
+
+  .context-menu-subcontent {
+    @apply border-default bg-elevated text z-50 min-w-[8rem] overflow-hidden rounded border p-1 shadow-md;
+  }
+
+  .context-menu-content {
+    @apply border-default bg-elevated text z-50 min-w-[8rem] overflow-hidden rounded border p-1 shadow-md;
+  }
+
+  .context-menu-item {
+    @apply text-md focus:bg-item-hover focus:text data-[disabled]:opacity-disabled relative flex h-8 cursor-default select-none items-center rounded-sm px-2 py-1 outline-none data-[disabled]:pointer-events-none;
+  }
+
+  .context-menu-checkbox {
+    @apply text-md focus:bg-item-hover focus:text data-[disabled]:opacity-disabled relative flex h-8 cursor-default select-none items-center rounded-sm py-1 pl-8 pr-2 outline-none data-[disabled]:pointer-events-none;
+  }
+
+  .context-menu-checkbox-span {
+    @apply absolute left-2 flex h-4 w-4 items-center justify-center;
+  }
+
+  .context-menu-checkbox-icon {
+    @apply h-4 w-4;
+  }
+
+  .context-menu-radio {
+    @apply text-md focus:bg-item-hover focus:text data-[disabled]:opacity-disabled relative flex h-8 cursor-default select-none items-center rounded-sm py-1 pl-8 pr-2 outline-none data-[disabled]:pointer-events-none;
+  }
+
+  .context-menu-radio-span {
+    @apply absolute left-2 flex h-4 w-4 items-center justify-center;
+  }
+
+  .context-menu-radio-icon {
+    @apply h-2 w-2;
+  }
+
+  .context-menu-label {
+    @apply text-heading-group text-description relative flex h-8 items-center px-2 py-1;
+  }
+
+  .context-menu-separator {
+    @apply bg-border -mx-1 my-1 h-[1px];
+  }
+
+  .context-menu-shortcut {
+    @apply text-description ml-auto pl-1 text-sm tracking-widest;
+  }
+}

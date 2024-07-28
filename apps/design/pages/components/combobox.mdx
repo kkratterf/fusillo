@@ -1,0 +1,232 @@
+---
+title: Combobox
+---
+
+import { Tabs, Cards, Card } from "nextra/components";
+import { ComboboxPreview } from "@components/preview/combobox.tsx";
+
+# 💠 Combobox
+
+Autocomplete input and command palette with a list of suggestions.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <ComboboxPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="combobox.tsx"
+    "use client"
+
+    import * as React from "react"
+    import { Check, ChevronsUpDown } from "@fusillo/ui/components/icon"
+    import { Button } from "@fusillo/ui/components/button"
+    import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@fusillo/ui/components/command"
+    import { Popover, PopoverContent, PopoverTrigger } from "@fusillo/ui/components/popover"
+
+    const frameworks = [
+      {
+        value: "next.js",
+        label: "Next.js",
+      },
+      {
+        value: "sveltekit",
+        label: "SvelteKit",
+      },
+      {
+        value: "nuxt.js",
+        label: "Nuxt.js",
+      },
+      {
+        value: "remix",
+        label: "Remix",
+      },
+      {
+        value: "astro",
+        label: "Astro",
+      },
+    ]
+
+    export function ComboboxDemo() {
+      const [open, setOpen] = React.useState(false)
+      const [value, setValue] = React.useState("")
+
+      return (
+        <Popover open={open} onOpenChange={setOpen}>
+          <PopoverTrigger asChild>
+            <Button
+              variant="secondary"
+              role="combobox"
+              aria-expanded={open}
+              className="w-[240px] justify-between"
+            >
+              {value
+                ? frameworks.find((framework) => framework.value === value)?.label
+                : 'Select framework...'}
+              <ChevronsUpDown />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-[240px] p-0">
+            <Command>
+              <CommandInput placeholder="Search framework..." />
+              <CommandEmpty>No framework found.</CommandEmpty>
+              <CommandGroup>
+                {frameworks.map((framework) => (
+                  <CommandItem
+                    key={framework.value}
+                    value={framework.value}
+                    onSelect={(currentValue) => {
+                      setValue(currentValue === value ? '' : currentValue);
+                      setOpen(false);
+                    }}
+                  >
+                    <Check
+                      className={cn(
+                        'mr-2',
+                        value === framework.value ? 'opacity-visible' : 'opacity-invisible'
+                      )}
+                    />
+                    {framework.label}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            </Command>
+          </PopoverContent>
+        </Popover>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+The Combobox component is an enhanced input field that provides users with auto-completion functionality as they type.
+
+It combines a text input with a dropdown list of suggestions, allowing users to quickly complete their entry or choose from a range of options.
+
+This component is ideal for fields that require precise input and also benefit from suggestions, such as search bars or data entry fields with predefined options.
+
+### When to use
+
+- **Search interfaces**: Use a Combobox for search fields where you want to provide users with instant suggestions based on their input.
+- **Data entry**: Employ a Combobox in forms where users need to input data from a defined set of values, such as tagging systems or categorization features.
+- **Command execution**: Utilize a Combobox as a command palette that offers a list of actions or shortcuts for power users.
+- **User-friendly input**: A Combobox can be used to make data entry more user-friendly by reducing typing and input errors, especially when dealing with long or complex items.
+
+Avoid using a Combobox for simple binary choices or when only a handful of options are available; simpler form elements like radio buttons or toggles may be more appropriate. Ensure that the Combobox doesn't overwhelm users with too many suggestions at once, as this can make the interface cluttered and the user experience confusing.
+
+## About
+
+The Combobox is built using a composition of the `<Popover />` and the `<Command />` components.
+
+See installation instructions for the [Popover](/components/popover) and the [Command](/components/command) components.
+
+## Examples
+
+### Default
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <ComboboxPreview />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```js copy filename="combobox.tsx"
+    "use client"
+
+    import * as React from "react"
+    import { Check, ChevronsUpDown } from "@fusillo/ui/components/icon"
+    import { Button } from "@fusillo/ui/components/button"
+    import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@fusillo/ui/components/command"
+    import { Popover, PopoverContent, PopoverTrigger } from "@fusillo/ui/components/popover"
+
+    const frameworks = [
+      {
+        value: "next.js",
+        label: "Next.js",
+      },
+      {
+        value: "sveltekit",
+        label: "SvelteKit",
+      },
+      {
+        value: "nuxt.js",
+        label: "Nuxt.js",
+      },
+      {
+        value: "remix",
+        label: "Remix",
+      },
+      {
+        value: "astro",
+        label: "Astro",
+      },
+    ]
+
+    export function ComboboxDemo() {
+      const [open, setOpen] = React.useState(false)
+      const [value, setValue] = React.useState("")
+
+      return (
+        <Popover open={open} onOpenChange={setOpen}>
+          <PopoverTrigger asChild>
+            <Button
+              variant="secondary"
+              role="combobox"
+              aria-expanded={open}
+              className="w-[240px] justify-between"
+            >
+              {value
+                ? frameworks.find((framework) => framework.value === value)?.label
+                : 'Select framework...'}
+              <ChevronsUpDown />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-[240px] p-0">
+            <Command>
+              <CommandInput placeholder="Search framework..." />
+              <CommandEmpty>No framework found.</CommandEmpty>
+              <CommandGroup>
+                {frameworks.map((framework) => (
+                  <CommandItem
+                    key={framework.value}
+                    value={framework.value}
+                    onSelect={(currentValue) => {
+                      setValue(currentValue === value ? '' : currentValue);
+                      setOpen(false);
+                    }}
+                  >
+                    <Check
+                      className={cn(
+                        'mr-2',
+                        value === framework.value ? 'opacity-visible' : 'opacity-invisible'
+                      )}
+                    />
+                    {framework.label}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            </Command>
+          </PopoverContent>
+        </Popover>
+      )
+    }
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## Useful links
+
+**Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
+
+<Cards className="mt-8">
+  <Card
+    title="🤖 Storybook"
+    href="https://www.stories.fusillo.design/?path=/docs/components-combobox--documentation"
+  />
+  <Card
+    title="🪄 Figma"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-fusillo---design-system?node-id=233-755&t=nua4UmG9Iu1hfUAm-1"
+  />
+</Cards>

@@ -1,0 +1,54 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .command-component {
+    @apply bg-elevated text flex h-full w-full flex-col overflow-hidden rounded-lg;
+  }
+
+  .command-dialog-content {
+    @apply overflow-hidden shadow-lg [&>svg]:h-4 [&>svg]:w-4;
+  }
+
+  .command-dialog {
+    @apply [&_[cmdk-group-heading]]:text-description [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-4 [&_[cmdk-input-wrapper]_svg]:w-4 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-6 [&_[cmdk-item]_svg]:w-6;
+  }
+
+  .command-input-container {
+    @apply border-default flex items-center border-b px-3;
+  }
+
+  .command-input-search {
+    @apply stroke-icon mr-2 h-4 w-4 shrink-0 stroke-2;
+  }
+
+  .command-input {
+    @apply bg-elevated text-md placeholder:text-placeholder disabled:opacity-disabled flex h-9 w-full rounded border-none py-3 outline-none disabled:cursor-not-allowed !important;
+  }
+
+  .command-list {
+    @apply max-h-[300px] overflow-y-auto overflow-x-hidden;
+  }
+
+  .command-empty {
+    @apply text-md text-description py-6 text-center;
+  }
+
+  .command-group {
+    @apply [&_[cmdk-group-heading]]:text-heading-group [&_[cmdk-group-heading]]:text-description overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2;
+  }
+
+  .command-separator {
+    @apply bg-border -mx-1 h-[1px];
+  }
+
+  .command-item {
+    @apply text-md aria-selected:bg-item-selected aria-selected:text data-[disabled]:opacity-disabled relative flex h-9 cursor-default select-none items-center rounded-sm px-2 py-1 outline-none data-[disabled]:pointer-events-none [&>svg]:h-4 [&>svg]:w-4;
+  }
+
+  .command-shortcut {
+    @apply text-description ml-auto pl-1 text-sm tracking-widest [&>svg]:h-4 [&>svg]:w-4;
+  }
+}

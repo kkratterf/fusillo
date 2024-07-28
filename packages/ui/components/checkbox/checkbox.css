@@ -1,0 +1,14 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .checkbox-component {
+    @apply bg-card border-brand ring-offset-background focus-visible:ring-brand disabled:opacity-disabled data-[state=checked]:bg-brand h-4 w-4 shrink-0 overflow-hidden rounded-sm border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed;
+  }
+
+  .checkbox-indicator {
+    @apply [&>svg]:stroke-icon-brand-inverse flex items-center justify-center overflow-hidden [&>svg]:h-4 [&>svg]:w-4 [&>svg]:stroke-2;
+  }
+}

@@ -1,0 +1,18 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .resizable-panel-group {
+    @apply flex h-full w-full data-[panel-group-direction=vertical]:flex-col;
+  }
+
+  .resizable-panel-resize-handle {
+    @apply bg-border relative flex w-px items-center justify-center;
+  }
+
+  .resizable-panel-div {
+    @apply border-default bg-border z-10 flex h-4 w-3 items-center justify-center rounded-sm border [&>svg]:h-3 [&>svg]:w-3;
+  }
+}

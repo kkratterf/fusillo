@@ -1,0 +1,30 @@
+{
+  "extends": "@fusillo/tsconfig/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "typeRoots": ["./tokens.d.ts"],
+    "strictNullChecks": true,
+    "experimentalDecorators": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "../../packages/types/*.d.ts",
+    "../../packages/types/next-auth.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mdx",
+    "pages/_app.mdx",
+    "middleware.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}
