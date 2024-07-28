@@ -2,10 +2,10 @@
 title: Sheet
 ---
 
-import { Tabs, Cards, Card } from 'nextra/components';
-import { AccessibilityTable } from '@components/accessibility/accessibility-table.mdx';
-import { sheetAccessibilityData } from '@components/accessibility/sheet.tsx';
-import { SheetPreview, SheetSide } from '@components/preview/sheet.tsx';
+import { Tabs, Cards, Card } from "nextra/components";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { sheetAccessibilityData } from "@components/accessibility/sheet.tsx";
+import { SheetPreview, SheetSide } from "@components/preview/sheet.tsx";
 
 # 💠 Sheet
 
@@ -31,44 +31,45 @@ Extends the Dialog component to display content that complements the main conten
     SheetTrigger,
   } from "@fusillo/ui/components/sheet"
 
-  export function SheetDemo() {
-    return (
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button variant="secondary">Open</Button>
-        </SheetTrigger>
-        <SheetContent>
-          <SheetHeader>
-            <SheetTitle>Edit profile</SheetTitle>
-            <SheetDescription>
-              Make changes to your profile here. Click save when you're done.
-            </SheetDescription>
-          </SheetHeader>
-          <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right">
-                Name
-              </Label>
-              <Input id="name" defaultValue="Michael Scott" className="col-span-3" />
-            </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="username" className="text-right">
-                Username
-              </Label>
-              <Input id="username" defaultValue="@mscott" className="col-span-3" />
-            </div>
-          </div>
-          <SheetFooter>
-            <SheetClose asChild>
-              <Button type="submit">Save changes</Button>
-            </SheetClose>
-          </SheetFooter>
-        </SheetContent>
-      </Sheet>
-    )
-  }
-  ```
-  </Tabs.Tab>
+export function SheetDemo() {
+return (
+<Sheet>
+<SheetTrigger asChild>
+<Button variant="secondary">Open</Button>
+</SheetTrigger>
+<SheetContent>
+<SheetHeader>
+<SheetTitle>Edit profile</SheetTitle>
+<SheetDescription>
+Make changes to your profile here. Click save when you're done.
+</SheetDescription>
+</SheetHeader>
+<div className="grid gap-4 py-4">
+<div className="grid grid-cols-4 items-center gap-4">
+<Label htmlFor="name" className="text-right">
+Name
+</Label>
+<Input id="name" defaultValue="Michael Scott" className="col-span-3" />
+</div>
+<div className="grid grid-cols-4 items-center gap-4">
+<Label htmlFor="username" className="text-right">
+Username
+</Label>
+<Input id="username" defaultValue="@mscott" className="col-span-3" />
+</div>
+</div>
+<SheetFooter>
+<SheetClose asChild>
+<Button type="submit">Save changes</Button>
+</SheetClose>
+</SheetFooter>
+</SheetContent>
+</Sheet>
+)
+}
+
+````
+</Tabs.Tab>
 </Tabs>
 
 ## Usage
@@ -90,62 +91,63 @@ Avoid using Sheets for critical actions or information that users must interact 
 ### Default
 
 <Tabs items={['Preview', 'Code']}>
-  <Tabs.Tab>
-    <SheetPreview />
-  </Tabs.Tab>
-  <Tabs.Tab>
-  ```js copy filename="sheet.tsx"
-  import { Button } from "@fusillo/ui/components/button"
-  import { Input } from "@fusillo/ui/components/input"
-  import { Label } from "@fusillo/ui/components/label"
-  import {
-    Sheet,
-    SheetClose,
-    SheetContent,
-    SheetDescription,
-    SheetFooter,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-  } from "@fusillo/ui/components/sheet"
+<Tabs.Tab>
+  <SheetPreview />
+</Tabs.Tab>
+<Tabs.Tab>
+```js copy filename="sheet.tsx"
+import { Button } from "@fusillo/ui/components/button"
+import { Input } from "@fusillo/ui/components/input"
+import { Label } from "@fusillo/ui/components/label"
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@fusillo/ui/components/sheet"
 
-  export function SheetDemo() {
-    return (
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button variant="secondary">Open</Button>
-        </SheetTrigger>
-        <SheetContent>
-          <SheetHeader>
-            <SheetTitle>Edit profile</SheetTitle>
-            <SheetDescription>
-              Make changes to your profile here. Click save when you're done.
-            </SheetDescription>
-          </SheetHeader>
-          <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right">
-                Name
-              </Label>
-              <Input id="name" defaultValue="Michael Scott" className="col-span-3" />
-            </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="username" className="text-right">
-                Username
-              </Label>
-              <Input id="username" defaultValue="@mscott" className="col-span-3" />
-            </div>
+export function SheetDemo() {
+  return (
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="secondary">Open</Button>
+      </SheetTrigger>
+      <SheetContent>
+        <SheetHeader>
+          <SheetTitle>Edit profile</SheetTitle>
+          <SheetDescription>
+            Make changes to your profile here. Click save when you're done.
+          </SheetDescription>
+        </SheetHeader>
+        <div className="grid gap-4 py-4">
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="name" className="text-right">
+              Name
+            </Label>
+            <Input id="name" defaultValue="Michael Scott" className="col-span-3" />
           </div>
-          <SheetFooter>
-            <SheetClose asChild>
-              <Button type="submit">Save changes</Button>
-            </SheetClose>
-          </SheetFooter>
-        </SheetContent>
-      </Sheet>
-    )
-  }
-  ```
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="username" className="text-right">
+              Username
+            </Label>
+            <Input id="username" defaultValue="@mscott" className="col-span-3" />
+          </div>
+        </div>
+        <SheetFooter>
+          <SheetClose asChild>
+            <Button type="submit">Save changes</Button>
+          </SheetClose>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
+  )
+}
+````
+
   </Tabs.Tab>
 </Tabs>
 
@@ -159,66 +161,67 @@ Avoid using Sheets for critical actions or information that users must interact 
   ```js copy filename="sheet.tsx"
    "use client"
 
-  import { Button } from "@fusillo/ui/components/button"
-  import { Input } from "@fusillo/ui/components/input"
-  import { Label } from "@fusillo/ui/components/label"
-  import {
-    Sheet,
-    SheetClose,
-    SheetContent,
-    SheetDescription,
-    SheetFooter,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-  } from "@fusillo/ui/components/sheet"
+import { Button } from "@fusillo/ui/components/button"
+import { Input } from "@fusillo/ui/components/input"
+import { Label } from "@fusillo/ui/components/label"
+import {
+Sheet,
+SheetClose,
+SheetContent,
+SheetDescription,
+SheetFooter,
+SheetHeader,
+SheetTitle,
+SheetTrigger,
+} from "@fusillo/ui/components/sheet"
 
-  const SHEET_SIDES = ["top", "right", "bottom", "left"] as const
+const SHEET_SIDES = ["top", "right", "bottom", "left"] as const
 
-  type SheetSide = (typeof SHEET_SIDES)[number]
+type SheetSide = (typeof SHEET_SIDES)[number]
 
-  export function SheetDemo() {
-    return (
-      <div lassName="grid grid-cols-2 gap-2">
-        {SHEET_SIDES.map((side) => (
-          <Sheet key={side}>
-            <SheetTrigger asChild>
-              <Button variant="secondary">{side}</Button>
-            </SheetTrigger>
-            <SheetContent side={side}>
-              <SheetHeader>
-                <SheetTitle>Edit profile</SheetTitle>
-                <SheetDescription>
-                  Make changes to your profile here. Click save when you're done.
-                </SheetDescription>
-              </SheetHeader>
-              <div className="grid gap-4 py-4">
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="name" className="text-right">
-                    Name
-                  </Label>
-                  <Input id="name" defaultValue="Michael Scott" className="col-span-3"/>
-                </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="username" className="text-right">
-                    Username
-                  </Label>
-                  <Input id="username" defaultValue="@mscott" className="col-span-3"/>
-                </div>
-              </div>
-              <SheetFooter>
-                <SheetClose asChild>
-                  <Button type="submit">Save changes</Button>
-                </SheetClose>
-              </SheetFooter>
-            </SheetContent>
-          </Sheet>
-        ))}
-      </div>
-    )
-  }
-  ```
-  </Tabs.Tab>
+export function SheetDemo() {
+return (
+<div lassName="grid grid-cols-2 gap-2">
+{SHEET_SIDES.map((side) => (
+<Sheet key={side}>
+<SheetTrigger asChild>
+<Button variant="secondary">{side}</Button>
+</SheetTrigger>
+<SheetContent side={side}>
+<SheetHeader>
+<SheetTitle>Edit profile</SheetTitle>
+<SheetDescription>
+Make changes to your profile here. Click save when you're done.
+</SheetDescription>
+</SheetHeader>
+<div className="grid gap-4 py-4">
+<div className="grid grid-cols-4 items-center gap-4">
+<Label htmlFor="name" className="text-right">
+Name
+</Label>
+<Input id="name" defaultValue="Michael Scott" className="col-span-3"/>
+</div>
+<div className="grid grid-cols-4 items-center gap-4">
+<Label htmlFor="username" className="text-right">
+Username
+</Label>
+<Input id="username" defaultValue="@mscott" className="col-span-3"/>
+</div>
+</div>
+<SheetFooter>
+<SheetClose asChild>
+<Button type="submit">Save changes</Button>
+</SheetClose>
+</SheetFooter>
+</SheetContent>
+</Sheet>
+))}
+</div>
+)
+}
+
+````
+</Tabs.Tab>
 </Tabs>
 
 ### Size
@@ -227,18 +230,18 @@ You can adjust the `size` of the sheet using CSS classes:
 
 ```js copy {3} /className="w-96 sm:w-full"/ filename="sheet.tsx"
 <Sheet>
-  <SheetTrigger>Open</SheetTrigger>
-  <SheetContent className="w-96 sm:w-full">
-    <SheetHeader>
-      <SheetTitle>Are you sure absolutely sure?</SheetTitle>
-      <SheetDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-      </SheetDescription>
-    </SheetHeader>
-  </SheetContent>
+<SheetTrigger>Open</SheetTrigger>
+<SheetContent className="w-96 sm:w-full">
+  <SheetHeader>
+    <SheetTitle>Are you sure absolutely sure?</SheetTitle>
+    <SheetDescription>
+      This action cannot be undone. This will permanently delete your account
+      and remove your data from our servers.
+    </SheetDescription>
+  </SheetHeader>
+</SheetContent>
 </Sheet>
-```
+````
 
 ## Useful links
 
@@ -251,7 +254,7 @@ You can adjust the `size` of the sheet using CSS classes:
   />
   <Card
     title="🪄 Figma"
-    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-fusillo---design-system?node-id=540-8877&t=nua4UmG9Iu1hfUAm-1"
+    href="https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=540%3A8877&mode=design&t=Aq9znIDZ1U4lgvQV-1"
   />
   <Card
     title="🐝 API Reference"
